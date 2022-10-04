@@ -37,7 +37,11 @@ export default function Form2() {
           <Grid item xs={12}>
             <FormGroup>
               <InputLabel>Technical Skills</InputLabel>
-              <Stack direction="row">
+              <Stack
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+              >
                 <FormControlLabel control={<Checkbox />} label="HTML" />
                 <FormControlLabel control={<Checkbox />} label="CSS" />
                 <FormControlLabel control={<Checkbox />} label="Bootstrap" />
@@ -45,7 +49,11 @@ export default function Form2() {
                 <FormControlLabel control={<Checkbox />} label="SASS" />
                 <FormControlLabel control={<Checkbox />} label="Angler" />
               </Stack>
-              <Stack direction="row">
+              <Stack
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+              >
                 <FormControlLabel control={<Checkbox />} label="MySQL" />
                 <FormControlLabel control={<Checkbox />} label="PHP" />
                 <FormControlLabel control={<Checkbox />} label="Python" />
