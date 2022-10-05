@@ -7,8 +7,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Stack,
-  Button,
 } from "@mui/material";
 
 export default function Form1() {
@@ -18,12 +16,12 @@ export default function Form1() {
   return (
     <div>
       <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          "& > :not(style)": { m: 1, width: "600px" },
-        }}
+      // display="flex"
+      // justifyContent="center"
+      // alignItems="center"
+      // sx={{
+      //   "& > :not(style)": { m: 1, width: "600px" },
+      // }}
       >
         <Grid container spacing={1}>
           <Grid item xs={6}>

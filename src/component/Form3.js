@@ -5,12 +5,12 @@ export default function Form3() {
   return (
     <div>
       <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          "& > :not(style)": { m: 1, width: "600px" },
-        }}
+      // display="flex"
+      // justifyContent="center"
+      // alignItems="center"
+      // sx={{
+      //   "& > :not(style)": { m: 1, width: "600px" },
+      // }}
       >
         <Grid container spacing={1}>
           <Grid item xs={12}>
