@@ -7,6 +7,8 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Stack,
+  Button,
 } from "@mui/material";
 
 export default function Form1() {
@@ -24,9 +26,6 @@ export default function Form1() {
         }}
       >
         <Grid container spacing={1}>
-          <Grid item xs={12}>
-            Personal Information
-          </Grid>
           <Grid item xs={6}>
             <TextField label="Firstname" variant="filled" fullWidth />
           </Grid>

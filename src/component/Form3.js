@@ -14,9 +14,6 @@ export default function Form3() {
       >
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            Confirm your input
-          </Grid>
-          <Grid item xs={12}>
             <Paper elevation={3}>test</Paper>
           </Grid>
           <Grid item xs={12}>

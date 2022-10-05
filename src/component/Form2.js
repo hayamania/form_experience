@@ -23,9 +23,6 @@ export default function Form2() {
       >
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            Professional Information
-          </Grid>
-          <Grid item xs={12}>
             <TextField label="Present Position" variant="filled" fullWidth />
           </Grid>
           <Grid item xs={12}>
