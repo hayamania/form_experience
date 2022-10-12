@@ -1,90 +1,96 @@
 import React from "react";
-import {
-  TextField,
-  Box,
-  Grid,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-} from "@mui/material";
+import { Box, Grid } from "@mui/material";
+import { useFormContext } from "react-hook-form";
+import ControlledTextField from "./controller/ControlledTextField";
+import ControlledDateField from "./controller/ControlledDateField";
+import ControlledSelectField from "./controller/ControlledSelectField";
 
 export default function Form1() {
-  function handleChange() {
-    console.log("gender changed");
-  }
+  const { register, control } = useFormContext();
+  const genderOption = [
+    { key: "male", value: "male", text: "Male" },
+    { key: "female", value: "female", text: "Female" },
+    { key: "other", value: "other", text: "Other" },
+    {
+      key: "prefer_not_to_say",
+      value: "prefer_not_to_say",
+      text: "Prefer not to say",
+    },
+  ];
   return (
     <div>
-      <Box
-      // display="flex"
-      // justifyContent="center"
-      // alignItems="center"
-      // sx={{
-      //   "& > :not(style)": { m: 1, width: "600px" },
-      // }}
-      >
+      <Box>
         <Grid container spacing={1}>
           <Grid item xs={6}>
-            <TextField label="Firstname" variant="filled" fullWidth />
+            <ControlledTextField
+              label="First Name"
+              name="firstName"
+              control={control}
+            />
           </Grid>
           <Grid item xs={6}>
-            <TextField label="Lastname" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Last Name"
+              name="lastName"
+              control={control}
+            />
           </Grid>
           <Grid item xs={6}>
-            <TextField label="Email" variant="filled" fullWidth />
+            <ControlledTextField label="Email" name="email" control={control} />
           </Grid>
           <Grid item xs={6}>
-            <TextField label="Confirm Email" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Confirm Email"
+              name="emailc"
+              control={control}
+            />
           </Grid>
           <Grid item xs={6}>
-            <TextField
+            <ControlledTextField
               label="Passowrd"
-              variant="filled"
+              name="password"
               type="password"
-              fullWidth
+              control={control}
             />
           </Grid>
           <Grid item xs={6}>
-            <TextField
+            <ControlledTextField
               label="Confirm Passowrd"
-              variant="filled"
+              name="passwordc"
               type="password"
-              fullWidth
+              control={control}
             />
           </Grid>
           <Grid item xs={6}>
-            <TextField label="Mobile" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Mobile"
+              name="mobile"
+              type="number"
+              control={control}
+            />
           </Grid>
           <Grid item xs={6}>
-            <TextField label="Phone" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Phone"
+              name="phone"
+              type="number"
+              control={control}
+            />
           </Grid>
           <Grid item xs={6}>
-            <TextField
+            <ControlledDateField
               label="Data of Birth"
-              type="date"
-              variant="filled"
-              InputLabelProps={{ shrink: true }}
-              fullWidth
+              name="dob"
+              control={control}
             />
           </Grid>
           <Grid item xs={6}>
-            <FormControl fullWidth>
-              <InputLabel id="gender-label">Gender</InputLabel>
-              <Select
-                labelId="gender-label"
-                value={""}
-                label="Gender"
-                variant="filled"
-                onChange={handleChange}
-              >
-                <MenuItem value={"male"}>Male</MenuItem>
-                <MenuItem value={"female"}>Female</MenuItem>
-                <MenuItem value={"other"}>Other</MenuItem>
-                <MenuItem value={"prefer_not_to_say"}>
-                  Prefer not to say
-                </MenuItem>
-              </Select>
-            </FormControl>
+            <ControlledSelectField
+              label="Gender"
+              name="gender"
+              options={genderOption}
+              control={control}
+            />
           </Grid>
         </Grid>
       </Box>

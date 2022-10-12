@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  TextField,
   Box,
   Grid,
   FormGroup,
@@ -9,27 +8,36 @@ import {
   InputLabel,
   Stack,
 } from "@mui/material";
+import { useFormContext } from "react-hook-form";
+import ControlledTextField from "./controller/ControlledTextField";
+import ControlledCheckboxField from "./controller/ControlledCheckboxField";
 
 export default function Form2() {
+  const { register, control } = useFormContext();
   return (
     <div>
-      <Box
-      // display="flex"
-      // justifyContent="center"
-      // alignItems="center"
-      // sx={{
-      //   "& > :not(style)": { m: 1, width: "600px" },
-      // }}
-      >
+      <Box>
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            <TextField label="Present Position" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Present Position"
+              name="position"
+              control={control}
+            />
           </Grid>
           <Grid item xs={12}>
-            <TextField label="Qualification1" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Qualification1"
+              name="qualification1"
+              control={control}
+            />
           </Grid>
           <Grid item xs={12}>
-            <TextField label="Qualification2" variant="filled" fullWidth />
+            <ControlledTextField
+              label="Qualification2"
+              name="qualification2"
+              control={control}
+            />
           </Grid>
           <Grid item xs={12}>
             <FormGroup>
@@ -39,24 +47,73 @@ export default function Form2() {
                 justifyContent="center"
                 alignItems="center"
               >
-                <FormControlLabel control={<Checkbox />} label="HTML" />
-                <FormControlLabel control={<Checkbox />} label="CSS" />
+                <ControlledCheckboxField
+                  label="HTML"
+                  name="skills.HTML"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="CSS"
+                  name="skills.CSS"
+                  control={control}
+                />
                 <FormControlLabel control={<Checkbox />} label="Bootstrap" />
-                <FormControlLabel control={<Checkbox />} label="React" />
-                <FormControlLabel control={<Checkbox />} label="SASS" />
-                <FormControlLabel control={<Checkbox />} label="Angler" />
+                <ControlledCheckboxField
+                  label="Bootstrap"
+                  name="skills.Bootstrap"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="React"
+                  name="skills.React"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="SASS"
+                  name="skills.SASS"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="Angler"
+                  name="skills.Angler"
+                  control={control}
+                />
               </Stack>
               <Stack
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
               >
-                <FormControlLabel control={<Checkbox />} label="MySQL" />
-                <FormControlLabel control={<Checkbox />} label="PHP" />
-                <FormControlLabel control={<Checkbox />} label="Python" />
-                <FormControlLabel control={<Checkbox />} label="Ruby" />
-                <FormControlLabel control={<Checkbox />} label="C#" />
-                <FormControlLabel control={<Checkbox />} label="Java" />
+                <ControlledCheckboxField
+                  label="MySQL"
+                  name="skills.MySQL"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="PHP"
+                  name="skills.PHP"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="Python"
+                  name="skills.Python"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="Ruby"
+                  name="skills.Ruby"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="C#"
+                  name="skills.C"
+                  control={control}
+                />
+                <ControlledCheckboxField
+                  label="Java"
+                  name="skills.Java"
+                  control={control}
+                />
               </Stack>
             </FormGroup>
           </Grid>
