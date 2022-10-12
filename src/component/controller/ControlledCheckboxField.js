@@ -32,7 +32,6 @@ export default function ControlledCheckboxField(props) {
           }
           label={props.label}
           disabled={props.disabled}
-          sx={{ alignItems: "flex-start" }}
         />
       </FormGroup>
       <FormHelperText>
